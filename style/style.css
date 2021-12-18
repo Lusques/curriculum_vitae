@@ -1049,6 +1049,9 @@ font-size: 18px;
     margin: -40px 0 -60px -55px;
     transform: scale(.75);
   }
+  .skills--soft{
+    padding: 0;
+  }
 }
 @media screen and (max-width: 375px){
 
