@@ -1086,3 +1086,14 @@ font-size: 18px;
     background-position: 1300px;
   }
 }
+
+::-webkit-scrollbar{
+  background-color: var(--cinza-claro2);
+}
+::-webkit-scrollbar-button{
+  background-color: var(--cinza-claro);
+}
+::-webkit-scrollbar-thumb{
+  background-color: var(--cinza-claro);
+  border: solid 2px var(--cinza);
+}
