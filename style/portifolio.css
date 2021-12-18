@@ -70,6 +70,23 @@
   color: var(--text-color);
 }
 
+.write::after{
+  margin-left: -5px;
+  content: '|';
+  opacity: 1;
+  animation: cursor 1s infinite;
+}
+
+@keyframes cursor {
+  0%,100%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  
+}
+
 .button{
   border-radius: 3px;
   padding: 10px 20px ;
