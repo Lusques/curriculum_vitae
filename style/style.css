@@ -1026,7 +1026,7 @@ font-size: 18px;
     font-size: 32px;
   }
   .font-size--title{
-    font-size: 22px;
+    font-size: 21px;
   }
   
   .font-size--subtitle{
@@ -1046,11 +1046,30 @@ font-size: 18px;
     margin-right: 10px ;
   }
   .card-certification{
-    margin: -40px 0 -60px -55px;
-    transform: scale(.75);
+    margin: 50px 0 0;
+    min-width: 100%;
+    max-width: calc(100% - 40px);
   }
   .skills--soft{
     padding: 0;
+  }
+  .certification--title-subtitle::after{
+    min-width: 50%;
+  }
+  .certification-information{
+    min-width: 0;
+    max-width: 100%;
+  }
+  .logo-certification{
+    width: 75px;
+  }
+  .other-certification{
+    padding: 0 20px;
+    margin: 20px 0;
+    width: 100%;
+  }
+  .other-course--title{
+    font-size: 18px !important;
   }
 }
 @media screen and (max-width: 375px){
