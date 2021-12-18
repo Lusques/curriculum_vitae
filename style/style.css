@@ -1,0 +1,1035 @@
+*{
+  margin: 0;
+  padding: 0;
+  border: none;
+
+  list-style: none;
+  text-decoration: none;
+
+  font-family: Arial, sans-serif;
+
+  box-sizing: border-box;
+
+  transition: .6s;
+}
+
+:root{
+  --cinza-escuro: #111;
+  --cinza-semiescuro: #1d1d1d;
+  --cinza: #2b2b2b;
+  --cinza-claro: #363636;
+  --cinza-claro2: #444;
+
+  --text-branco: #FFF; 
+  --text-cinza: #d4d4d4;
+  --text-cinza-escuro: #888;
+}
+
+/* == START MENU MOBILE == */
+
+/* == START ANIMACOES == */
+/* faz com que o menu mobile apareça para o usuário. */
+#menu-phone:checked + #all-content > .content-menu-phone{
+  width: 300px;
+}
+
+#menu-phone + #all-content > #header > #menu img:last-child{
+display: none;
+}
+/* coloca uma borda no header para separar conteudo quano menu estiver aberto */
+#menu-phone:checked + #all-content > #header{
+  border-bottom: solid 3px var(--cinza-claro2);
+}
+
+#menu-phone:checked + #all-content > #header > #menu{
+  transition: .5s;
+  transform: rotate(90deg);
+}
+
+#menu-phone:checked + #all-content > #header > #menu img:first-child{
+  display: none;
+  }
+
+#menu-phone:checked + #all-content > #header > #menu img:last-child{
+  display: block;
+  }
+
+#menu-phone:checked + #all-content > .content-menu-phone > .menu-phone--container > .flex-column > li >.button-mobile{
+  font-size: 28px !important;
+}
+
+/* == END ANIMAÇÕES == */
+
+/* faz com que os inputs desapareçam */
+.hidden{
+  display: none;
+}
+
+/* dá características ao menu mobile */
+.content-menu-phone{
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  height: 100vh;
+  width: 0;
+
+  overflow: hidden;
+  z-index: 1000;
+  background-color: var(--cinza-escuro);
+}
+
+.menu-phone--container{
+  margin: 100px auto;
+  min-height: 60vh;
+  height: 100%;
+  max-height: 370px;
+  width: 480px;
+}
+
+.button-mobile{
+  border-radius: 3px;
+  font-size: 16px !important;
+
+  text-shadow: 2px 2px 5px var(--cinza-claro2);
+}
+
+/* == END MENU MOBILE == */
+
+/* == START HEADER NAVIGATION == */
+
+/* Conteúdo da página. */
+#all-content{
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 100ch;
+  height: fit-content;
+  width: 100%;
+
+  background-color: #1d1d1d;
+
+  background-size: cover;
+  background-position-x: right;
+  background-position-y: bottom;
+  background-repeat: repeat-y;
+  background-image: url(../images/background-details.svg);
+}
+/* Id que dá o comportamento individual para a tag Header */
+#header{
+  height: 80px;
+  margin-bottom: 148px;
+  padding-left: 36px;
+  padding-right: 36px;
+
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  
+  position: sticky;
+  top: 0;
+
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  align-items: center;
+  
+  background-color: var(--cinza-escuro);
+
+  z-index: 1000;
+}
+
+#header > nav > ul > li > a:hover {
+  color: var(--text-cinza-escuro);
+}
+
+#image-capa{
+  height: 515px;
+  width: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background-size: cover;
+  background-position: center;
+  background-image: url(../images/profile-bg.svg);
+}
+
+/* Id que dá caracteristicas únicas do nome "Lucas" no header */
+#nome{
+  font-family: HeadlandOne;
+  font-size: 37px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 46px;
+  letter-spacing: 0.05em;
+  text-align: left;
+
+}
+
+#nome a{
+  color: var(--text-branco);
+}
+
+#menu{
+  transition: 0s;
+  filter: invert(1);
+  display: none;
+}
+
+#menu img{
+  width: 65px;
+}
+
+/* Comando define quantas colunas da grid o menu nav irá ocupar */
+#header nav{
+ grid-column: 4/ 11;
+}
+
+/* Comando define padding entre os botões de  navegação e o menu */
+#header nav li{
+padding-top: 25px;
+padding-bottom: 25px;
+}
+
+/* classe que define margin do conteudo nas laterais da página. */
+.content{
+  min-height: 50px;
+  height: fit-content;
+  width: calc(100% - 120px);
+  margin: auto;
+}
+
+.text{
+  font-weight: 400;
+  letter-spacing: 0.05em;
+
+  font-size: 18px;
+  color: var(--text-branco);
+
+}
+.uppercase{
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.font-size--title{
+  font-size: 36px;
+}
+
+.font-size--subtitle{
+font-size: 24px;
+}
+
+.font-size-intertitle{
+  font-size: 14px;
+}
+
+.detach--2{
+  color: var(--text-cinza);
+}
+
+.detach--3{
+  color: var(--text-cinza-escuro);
+}
+
+/* classe generalista que agrega caracteristica de flex container - row - space around - center (eixo vertical)*/
+.flex-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.flex-column{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  
+}
+
+/* == END HEADER NAVIGATION == */
+
+/* == START MAIN == */
+
+/* id que define comportamento da tag main */
+#content-main{
+  margin-bottom: 80px;
+  position: relative;
+  
+  min-height: 100vh;
+  height: fit-content;
+
+
+}
+
+/* == START INFORMATION PROFILE == */
+.profile{
+  display: flex;
+
+  padding-left: 77px;
+  padding-right: 77px;
+  display: flex;
+
+  min-height: 562px;
+  height: fit-content;
+  width: 100%;
+
+  background-color: var(--cinza);
+}
+
+.content-profile{
+  margin: auto 0;
+  width: fit-content;
+}
+
+.profile-icons{
+margin-top: 15px;
+}
+.profile-icons > ul > li:hover,
+.footer-img:hover{
+  filter: grayscale(1);
+}
+
+#profile-image{
+border-radius: 50%;
+
+height: 300px;
+width: 300px;
+
+background-position: center;
+background-size: cover;
+background-image: url(../images/profile-image.jpeg);
+}
+
+.information-profile{
+  display: flex;
+  margin: auto;
+  /* min-height: 500px; */
+  height: fit-content;
+  width: 100%;
+
+}
+
+.information-profile--content{
+  margin: auto;
+
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  min-height: 400px;
+  height: fit-content;
+  width: 80%;
+}
+
+/* div que segura nome, cargo e botões de vc e contato */
+.--content-information{
+  display: flex;
+  flex-direction: column ;
+  row-gap: 15px;
+}
+
+.name{
+  font-size: 48px;
+  font-weight: 600;
+  -webkit-text-stroke: 1px white;
+  
+  text-shadow: 0 0 10px var(--text-cinza-escuro), 0 0 25px var(--text-cinza-escuro);
+
+  color: transparent;
+
+  animation: back-name 20s linear infinite;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: url(../images/back_name.png);
+}
+
+.store-buttons{
+  margin-top: 15px;
+  display: flex;
+
+}
+.store-buttons > a:hover{
+  transition: 1s;
+color: var(--text-cinza-escuro);
+background-color: white;
+
+}
+.button{
+  display: block;
+  padding: 10px 20px;
+  border-radius: 3px;
+
+  height: 36px;
+  width: fit-content;
+
+  background-color: #0EB94E;
+}
+
+.button:last-child{
+  margin-left: 15px;
+  background-color: #2B7BFE;
+}
+
+.information-profile--more{
+  height: 200px;
+  width: 100%;
+  max-width: 550px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.information-profile--more div{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+/* == END INFORMATION PROFILE == */
+
+/* START SKILLS */
+.skills{
+  margin-top: 80px;
+  width: calc(50% - 15px);
+}
+
+.skill-content{
+  margin-top: 20px;
+  margin-bottom: 40px;
+  padding: 20px 0;
+  min-height: calc(125px * 5 + 50px * 5);
+  height: fit-content;
+
+  background-color: var(--cinza);
+}
+
+
+.skill-item{
+  border-radius: 3px;
+
+  min-height: 125px;
+  height: fit-content;
+  width: 100%;
+  background-color: var(--cinza);
+}
+
+.skill-logo{
+  width: 75px;
+}
+
+.skill-container{
+  margin: 10px 0;
+  height: 20px;
+  width: 500px;
+
+  background-color: #3e3e3e;
+}
+
+#skill-container--level-css3{
+  height: inherit;
+  width: 85%;
+
+  display: relative;
+  top: 0;
+  left: 0;
+
+  background-color: #2b7cfe;
+}
+
+#skill-container--level-js{
+  height: inherit;
+  width: 40%;
+
+  display: relative;
+  top: 0;
+  left: 0;
+
+  background-color: #2b7cfe;
+}
+
+#skill-container--level-figma{
+  height: inherit;
+  width: 60%;
+
+  display: relative;
+  top: 0;
+  left: 0;
+
+  background-color: #2b7cfe;
+}
+
+#skill-container--level-git{
+  height: inherit;
+  width: 20%;
+
+  display: relative;
+  top: 0;
+  left: 0;
+
+  background-color: #2b7cfe;
+}
+
+#skill-container--level-html{
+  height: inherit;
+  width: 75%;
+
+  display: relative;
+  top: 0;
+  left: 0;
+
+  background-color: #2b7cfe;
+}
+
+.flex-skills{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.flex-between{
+  justify-content: space-between;
+}
+
+.skills--soft{
+  padding-left: 30px;
+  justify-content: initial;
+}
+
+.skill-container--soft{
+  margin: 10px 0;
+  height: 20px;
+  width: 600px;
+  display: relative;
+
+  background-color: #3e3e3e;
+}
+
+.flex-soft{
+  display: block;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+#soft-container--1{
+  height: inherit;
+  width: 75%;
+
+  display: relative;
+  top: 0;
+  left: 0;
+
+  background-color: #2b7cfe;
+}
+
+#soft-container--2{
+  height: inherit;
+  width: 92%;
+
+  display: relative;
+  top: 0;
+  left: 0;
+
+  background-color: #2b7cfe;
+}
+
+#soft-container--3{
+  height: inherit;
+  width: 68%;
+
+  display: relative;
+  top: 0;
+  left: 0;
+
+  background-color: #2b7cfe;
+}
+
+#soft-container--4{
+  height: inherit;
+  width: 100%;
+
+  display: relative;
+  top: 0;
+  left: 0;
+
+  background-color: #2b7cfe;
+}
+
+#soft-container--5{
+  height: inherit;
+  width: 85%;
+
+  display: relative;
+  top: 0;
+  left: 0;
+
+  background-color: #2b7cfe;
+}
+/* == END SKILLS == */
+
+/*== START ENTERPRISE ==*/
+.enterprise-content{
+  margin: 15px 0 40px;
+  padding: 0 10px;
+  height: fit-content;
+  width: 100%;
+  background-color: var(--cinza);
+}
+.flex-wrap{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.card-enterprise{
+  margin: 30px 0;
+  padding: 0 20px;
+  height: 562px;
+  width: calc(100% / 3 - 5px);
+  border-radius: 3px;
+
+  position: relative;
+
+  background-color: var(--cinza-claro);
+}
+.logo-enterprise{
+    margin: 15px auto ;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 3px;
+
+    height: 50px;
+    width: 180px;
+    background-color: var(--cinza-claro2);
+}
+.labor-div--title{
+  margin-bottom: 25px;
+  height: 60px;
+
+}
+.labor--title{
+  margin: auto;
+  text-align: center;
+}
+.labor-information{
+  margin: auto;
+}
+.labor-time{
+  margin: auto;
+  text-align: right;
+  position: absolute;
+  right: 20px;
+  bottom: 25px;
+}
+
+/*== END ENTERPRISE ==*/
+
+/* == START CERTIFICATIONS == */
+
+.certifications-content{
+  margin-top: 20px;
+  min-height: 300px;
+  padding: 0 20px;
+  width: 100%;
+  background-color: var(--cinza);
+}
+
+.card-certification{
+  margin: 50px auto 0;
+  padding:0 ;
+  height: 562px;
+  min-width: 535px;
+  width: calc(100% / 2 - 5px);
+  border-radius: 3px;
+
+  background-color: var(--cinza-claro);
+
+}
+.card-certification:last-child{
+  margin-bottom: 50px;
+}
+
+.card-certification--title{
+  height: 175px;
+  width: 100%;
+}
+
+.certification--title-img{
+  margin-bottom: 15px;
+  height: 50%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.logo-certification{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 3px;
+
+    height: 50px;
+    width: 180px;
+    background-color: var(--cinza-claro2);
+}
+
+.logo-certification.hidden{
+  opacity: 0;
+}
+
+.bold{
+  font-weight: bold;
+}
+.certification-gap{
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.certification-gap:last-child{
+  text-align: right;
+}
+
+.certification--title-subtitle{
+  height: auto;
+  width: 100%;
+}
+
+.certification--title-subtitle::after{
+  margin: 4px auto 0;
+  border-radius: 3px;
+
+  content: '';
+  height: 2px;
+  min-width: 300px;
+  width: calc(100% - 80px);
+  max-width: 480px;
+
+  display: block;
+
+  background-color: var(--cinza-claro2);
+}
+
+/* fala com os títulos dos certificados. ex "Desenvolvimento de Sistemas" */
+
+.certification--title-subtitle > h2.text.font-size--title:not(.detach--2){
+  text-align: center;
+  margin: auto;
+  max-width: calc(100% - 100px);
+  
+}
+
+.certification-information{
+  margin: auto;
+  height: fit-content;
+  min-width: 335px;
+  width: calc(100% - 40px);
+  max-width: 500px;
+}
+
+.credencial:hover{
+  text-decoration: underline;
+}
+
+/* === Other Certification card== */
+.other-certification--title{
+  margin: auto;
+  height: 87.5px;
+  width: calc(100% - 20px);
+}
+.other--title{
+  text-align: center;
+}
+.other-certification{
+  margin: 15px auto;
+  margin-top: 20px;
+  max-width: 500px;
+  width: calc(100% - 100px);
+  display: flex;
+  justify-content: space-between;
+}
+.other-certification div:last-child{
+  text-align: right;
+}
+.other-certification--square{
+  border-radius: 3px;
+  
+  height: 50px;
+  width: 100px;
+  background-color: var(--cinza-claro2);
+}
+.other-course--title{
+  font-size: 26px !important;
+}
+.other-course--subtitle{
+  font-size: 16px !important;
+}
+hr{
+  width: 100%;
+}
+hr::after{
+  margin: 4px auto 0;
+  border-radius: 3px;
+
+  content: '';
+  height: 2px;
+  min-width: 300px;
+  width: calc(100% - 80px);
+  max-width: 480px;
+
+  display: block;
+
+  background-color: var(--cinza-claro2);
+}
+
+/* == END CERTIFICATION == */
+
+/* START FOOTER */
+
+#footer{
+  padding: 0 52px;
+  min-height: 190px;
+  height: fit-content;
+  width: 100%;
+
+  background-color: var(--cinza-escuro);
+}
+.footer-div-img{
+  min-width: 437px;
+  width: calc(50% - 20px);
+  max-width: 500px;
+}
+.footer-img{
+  width: 100px;
+}
+
+@media screen and (max-width: 1900px) {
+  
+}
+@media screen and (max-width: 1600px) {
+  #header nav {
+    grid-column: 3/ 11;
+}
+.skill-container {
+  width: 450px;
+}
+
+.skill-container--soft {
+  width: 475px;
+}
+.logo-certification {
+  width: 160px;
+}
+}
+@media screen and (max-width: 1200px) {
+.content-menu-phone{
+  display: flex;
+}
+#header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#header nav {
+    display: none;
+}
+#menu{
+  display: block;
+}
+.content{
+  width: calc(100% - 80px);
+}
+.name{
+  font-size: 42px;
+}
+.font-size--title{
+  font-size: 32px;
+}
+
+.font-size--subtitle{
+font-size: 20px;
+}
+
+.font-size-intertitle{
+  font-size: 14px;
+}
+.flex-skills{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.skills {
+  margin-top: 80px;
+  width: 100%;
+}
+.skill-logo {
+  width: 50px;
+}
+
+.skill-container {
+  width: 750px;
+}
+
+.skill-container--soft {
+  width: 800px;
+}
+.card-certification {
+  min-width: 400px;
+  width: calc(100% - 50px);
+}
+}
+@media screen and (max-width: 992px) {
+#header{
+    margin-bottom: 75px;
+}
+.content{
+    width: calc(100% - 60px);
+  }
+.profile {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+}
+.content-profile {
+  margin: auto;
+}
+.information-profile--content {
+  margin: 20px auto;
+}
+.--content-information {
+  margin:0 auto;
+}
+.--content-information {
+  text-align: center;
+}
+.store-buttons{
+  margin: 15px 0;
+  justify-content: space-evenly;
+}
+.button:last-child {
+  margin: 0;
+}
+.information-profile--more {
+  margin: auto auto 0 auto;
+  max-width: 450px;
+}
+.skill-container {
+  width: 600px;
+}
+
+.skill-container--soft {
+  width: 650px;
+}
+
+.card-enterprise {
+  margin: 35px 0;
+  width: calc(50% - 5px);
+
+}
+
+#footer {
+  padding: 0;
+  min-height: 230px;
+  justify-content: space-around;
+  flex-direction: column;
+}
+}
+@media screen and (max-width: 768px) {
+
+  #profile-image {
+    height: 250px;
+    width: 250px;
+}
+.name{
+  font-size: 36px;
+}
+.font-size--title{
+  font-size: 28px;
+}
+
+.font-size--subtitle{
+font-size: 18px;
+}
+
+.font-size-intertitle{
+  font-size: 11px;
+}
+
+.information-profile--more {
+  max-width: 337px;
+}
+
+.content {
+  width: calc(100% - 40px);
+}
+.button {
+  height: fit-content;
+  padding: 8px 16px;
+}
+
+.information-profile--more {
+  margin: 0 auto;
+}
+
+.information-profile--content {
+ margin: 0 auto;
+}
+.information-profile--content {
+  justify-content: space-around;
+}
+
+.skill-container {
+  width: 300px;
+}
+
+.skill-container--soft {
+  width: 350px;
+}
+
+.card-enterprise{
+  width: 100%;
+}
+
+.logo-certification {
+    width: 100px;
+}
+.logo-certification > img{
+  width: calc(100% - 20px);
+}
+
+.other-course--title{
+  font-size: 22px !important;
+}
+.other-course--subtitle{
+  font-size: 11px !important;
+}
+
+}
+@media screen and (max-width: 480px) {
+  .name{
+    font-size: 32px;
+  }
+  .font-size--subtitle{
+    font-size: 16px;
+  }
+}
+
+.destaque{
+  filter: hue-rotate(360deg);
+  filter: grayscale(1);
+}
+
+@keyframes back-name{
+  100%{
+    background-position: 1300px;
+  }
+}
