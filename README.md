@@ -15,6 +15,7 @@ Estrutura<br>
 CSS3:<br>
 Flexbox<br>
 Layout Grid<br>
+heurística<br>
 Responsividade<br>
 KeyFrame<br>
 Pseudo-Seletores<br>
