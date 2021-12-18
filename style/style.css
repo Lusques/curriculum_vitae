@@ -1015,12 +1015,43 @@ font-size: 18px;
 
 }
 @media screen and (max-width: 480px) {
+.profile{
+  padding: 50px 0;
+}
+  #footer{
+    min-height: 170px;
+    justify-content: space-evenly;
+  }
   .name{
     font-size: 32px;
   }
-  .font-size--subtitle{
-    font-size: 16px;
+  .font-size--title{
+    font-size: 22px;
   }
+  
+  .font-size--subtitle{
+  font-size: 16px;
+  }
+  .footer-div-img{
+    min-width: 325px;
+    max-width: calc(100% - 80px);
+  }
+  .footer-img{
+    width: 75px;
+  }
+  .skill-item{
+    transform: scale(.85);
+  }
+  .skill-logo{
+    margin-right: 10px ;
+  }
+  .card-certification{
+    margin: -40px 0 -60px -55px;
+    transform: scale(.75);
+  }
+}
+@media screen and (max-width: 375px){
+
 }
 
 .destaque{
