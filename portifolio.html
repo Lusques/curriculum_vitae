@@ -19,7 +19,9 @@
       <div class="content">
         <div>
           <h1 class="title">Portifólio em desenvolvimento</h1>
-          <p class="text">Sinto muito pelo transtorno</p>
+          <p class="text write">
+            Sinto muito pelo transtorno
+          </p>
         </div>
         <div>
           <a href="index.html" class="text button">Voltar para a página anterior</a>
@@ -28,6 +30,20 @@
     </main>
 
   </section>
+
+  <script>
+    const escrita = document.querySelector('p')
+
+    function write(elemento) {
+      const textoArray = elemento.innerHTML.split('')
+      elemento.innerHTML = ''
+      textoArray.forEach((letra, i) => {
+        setTimeout(() => elemento.innerHTML += letra, 65 * i)
+      })
+    }
+    
+    write(escrita)
+  </script>
 
 </body>
 
